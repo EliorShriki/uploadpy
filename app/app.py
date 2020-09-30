@@ -74,5 +74,5 @@ def load():
         return redirect(url_for('error'))
 
 def run(is_debug=True):
-    app.run(is_debug)
+    app.run(debug=is_debug)
     return 1
