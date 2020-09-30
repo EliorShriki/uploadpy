@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css"/>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <nav style="direction: rtl;" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="">טנ"ק</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="load">טעינה<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="logs">לוגים</a>
+                </div>
+            </div>
+        </nav>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

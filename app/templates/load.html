@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Load{% endblock %}
+
+{% block content %}
+<form action="load" method="POST" enctype="multipart/form-data">
+    <div class="col" style="direction: rtl;margin-right: 1%;float: right;width: 20%;margin-top: 1%;">
+        <div class="row">
+            <div class="input-group mb-3">
+                <select class="custom-select" name="taalichim">
+                    <option selected>אנא בחר תהליך...</option>
+                    {% for taalich in taalichim %}
+                        <option value="{{taalich.id}}">{{taalich.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <input class="form-control-file" style="width: 100%;" type="file" name="files" multiple>
+        </div>
+        <br>
+        <div class="row">
+            <input class="btn btn-primary" type="submit" style="width: 100%;" value="Upload"/>
+        </div>
+    </div>
+</form>
+{% endblock %}

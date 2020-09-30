@@ -1,0 +1,7 @@
+[
+    {
+        "query_id": "1",
+        "description": "select the list of taalichim",
+        "query": "select shem_taalichm shem_taalich_ivrit from uploadpy.taalichim"
+    }
+]

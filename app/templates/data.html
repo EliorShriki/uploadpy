@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Preview{% endblock %}
+
+{% block content %}
+<div style="width: 100%; direction: rtl;">
+    <form action="verify" method="POST" enctype="multipart/form-data">
+        <input style="width:100%; direction: rtl; font-weight: bolder;" class="btn btn-dark" type="submit" value="אשר" name="verify">
+    </form>
+</div>
+<div style="direction: rtl">
+    <h1 style="text-align: center;">{{ procedure_name }}</h1>
+    {% for table in tables %}
+        {{ table | safe }}
+        <br><br><br>
+    {% endfor %}
+</div>
+{% endblock %}
