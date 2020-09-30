@@ -33,9 +33,8 @@ def verify():
         pro_name = session['procedure_name']
         mod = importlib.import_module(pro_name)
         helper.run_task(mod, pro_name)
-        return redirect(url_for('load'))
     except:
-        return redirect(url_for('error'))
+        pass
 
 @app.route('/data', methods=['GET', 'POST'])
 def data():
@@ -43,10 +42,12 @@ def data():
         tables = session['tables']
         procedure_name = session['procedure_name']
         if request.method == 'POST':
-            return verify()
+            verify()
+            return redirect(url_for('load'))
         else:
             return render_template('data.html', tables=tables, procedure_name=procedure_name)
-    except:
+    except Exception as e:
+        print(e)
         return redirect(url_for('error'))
 
 @app.route('/', methods=['GET', 'POST'])
@@ -70,7 +71,8 @@ def load():
                 return redirect(url_for('error'))
         else:
             return render_template('load.html', taalichim=taalichim)
-    except:
+    except Exception as e:
+        print(e)
         return redirect(url_for('error'))
 
 def run(is_debug=True):
