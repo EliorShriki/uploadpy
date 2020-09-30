@@ -7,7 +7,6 @@ import shutil
 os.environ['NLS_LANG'] = '.al32utf8'
 wd40 = os.getcwd()
 queries_path = wd40 + '\\uploadpy\\app\\queries.json'
-# connector = ora.connect('RM', 'L0ND0N', 'OFEK.WORLD')
 upload_folder = 'uploads'
 
 def load_queries():
