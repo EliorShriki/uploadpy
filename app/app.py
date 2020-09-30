@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import pandas as pd
 from os.path import dirname, join
-from . import logging, logger #pylint: disable=relative-beyond-top-level
+# from . import logging, logger #pylint: disable=relative-beyond-top-level
 import os
 import importlib
 import sys

@@ -7,7 +7,7 @@ import shutil
 os.environ['NLS_LANG'] = '.al32utf8'
 wd40 = os.getcwd()
 queries_path = wd40 + '\\uploadpy\\app\\queries.json'
-connector = ora.connect('RM', 'L0ND0N', 'OFEK.WORLD')
+# connector = ora.connect('RM', 'L0ND0N', 'OFEK.WORLD')
 upload_folder = 'uploads'
 
 def load_queries():
@@ -20,13 +20,13 @@ def load_queries():
     return data
 
 def get_taalichim(queries):
-    taalichim = []
-    taalichim_t = []
-    with connector.cursor() as c:
-        c.execute(queries['1'])
-        taalichim_t = c.fetchall()
-    for row in taalichim_t:
-        taalichim.append({'id': row[0], 'name': row[1]})
+    taalichim = [{'id': 'testing', 'name': 'בדיקות'}]
+    # taalichim_t = []
+    # with connector.cursor() as c:
+    #     c.execute(queries['1'])
+    #     taalichim_t = c.fetchall()
+    # for row in taalichim_t:
+    #     taalichim.append({'id': row[0], 'name': row[1]})
     return taalichim
 
 def load_df(f):
